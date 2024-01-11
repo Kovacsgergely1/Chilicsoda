@@ -1,2 +1,2 @@
-# IKT5
+# Chilicsoda
 IKT Projektmunka 5.
