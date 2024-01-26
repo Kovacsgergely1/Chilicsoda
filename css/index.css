@@ -1,5 +1,20 @@
 body{
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
 }
 
+.headbar{
+    background-color: rgba(128, 128, 128, 0.459);
+    padding: 1%;
+    position: sticky;
+}
+
+.logo{
+    padding-left: 50%;
+}
+
+.welcome{
+    margin: auto;
+    border-color: black;
+    border-style: solid;
+    background-color: rgba(128, 128, 128, 0.39);
+}
