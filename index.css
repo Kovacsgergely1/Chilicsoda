@@ -1,0 +1,126 @@
+body{
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y:scroll;
+}
+
+#bgVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content{
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.headbar{
+    background-color: whitesmoke;
+    position: sticky;
+}
+
+.logo{
+    width: 70px;
+    margin-left: 45%;
+}
+
+.welcome{
+    text-align: center;
+    margin-top: 20%;
+    background-color: #1F1717;
+    color: #EDEDED;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-left: 13%;
+    margin-right: 13%;
+    border-radius: 5px; 
+    margin-bottom: 27%;
+}
+
+#welcome{
+    transition: background-color 3s ease;
+}
+
+.bottom{
+    margin-top: 70%;
+}
+
+.login{
+    width: 40px;
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+.column3{
+    float: left;
+    width: 30%;
+    height: 300px;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column3:hover{
+    color: white;
+    background-color: #d10606;
+    /*background-color: #1f1717ee;*/
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+.column3{
+    transition: background-color 1s ease;
+    border-radius: 5px;
+}
+
+#section-2{
+    position: sticky;
+    background-color: #EDEDED;
+    height: 100vh;
+}
+
+.sect2-title{
+    text-align: center;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    color: #EDEDED;
+    background-color: #1F1717;
+    margin-left: 37%;
+    margin-right: 37%;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+
+.footer{
+    height: 10vh;
+    background-color: #1F1717;
+    position: sticky;
+    color: #EDEDED;
+}
+
+.ico{
+    height: auto;
+    width: 30px;
+    margin-left: 10px;
+    margin-top: 4%;
+}
+
+#info{
+    padding-bottom: 10px;
+}
+
+#info-text{
+    padding-left: 40px;
+    margin-top: -35px;
+    margin-left: 10px;
+}

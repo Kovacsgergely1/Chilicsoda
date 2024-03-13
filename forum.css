@@ -1,0 +1,87 @@
+body{
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y:scroll;
+}
+
+.headbar{
+    background-color: whitesmoke;
+    position: sticky;
+}
+
+.logo{
+    width: 70px;
+    margin-left: 45%;
+}
+
+.login{
+    width: 40px;
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+table{
+    width: 100%;
+    margin: auto;
+}
+
+th{
+    border: none;
+    text-align: center;
+    background-color: #fc200c;
+    border-bottom: 1px black solid;
+}
+
+td{
+    border: none;
+    text-align: center;
+    background-color:rgb(231, 230, 230);
+}
+
+#torles{
+    background-color: darkred;
+    color: white;
+    width: 20%;
+    float: right;
+    margin-right: 2%;
+}
+
+#torles:hover{
+    background-color: #fc200c;
+    transition: 1s ease;
+}
+
+input[type=submit]{
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input[type=submit]:hover{
+    background-color: #4e3939;
+    color: white;
+    transition: 0.3s ease;
+}
+
+#sender{
+    font-weight: bold;
+}
+
+#time{
+    font-style: italic;
+}
+
+#return{
+    background-color: #FFB70C;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5%;
+}
