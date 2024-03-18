@@ -43,6 +43,7 @@
       </video>
 
     <div id="Sidenav" class="sidenav">
+        
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a id="sidenav-selected" disabled>Főoldal</a>
         <a href="about.php">Rólunk</a>

@@ -97,6 +97,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="webshop.css">
     <link rel="stylesheet" href="./sidenav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="./sidenav.js"></script>
     <title>Chilicsoda Webshop</title>
 </head>
@@ -123,38 +126,56 @@
 
     
 <!-- szűrő -->
-<form action="webshop.php" method="post">
-    <?php
+<div class="row">
+    <div class="col-lg-3">
+        <div class="sidebar">
+            <form action="webshop.php" method="post">
+                <div class="sb-option-container">
+                    <?php
+                        echo "<h5>Márka</h5><hr>";
+                        //brands
+                        $sql_get_bradns = "SELECT * FROM brand;";
+                        $result = mysqli_query($conn, $sql_get_bradns);
+                        while($row = mysqli_fetch_assoc($result)){
+                            if(in_array($row["brand_id"], $_SESSION["filter_parameters"]["brands"])){
+                                echo "<input type='checkbox' name='brand-" . $row["brand_id"] . "' checked> " . $row["brand_name"] . "<br>";
+                            }
+                            else{
+                                echo "<input type='checkbox' name='brand-" . $row["brand_id"] . "'> " . $row["brand_name"] . "<br>";
+                            }
+                        }
+                        //erősség
+                        echo "<h5>Erősség</h5><hr>";
+                        for($i=1; $i <= 5; $i++){
+                            if(in_array($i, $_SESSION["filter_parameters"]["spicy"])){
+                                echo "<label class='container-checkbox'>
+                                <input type='checkbox' id='spicy-checked' name='spicy-$i' checked>
+                                <img class='img-unchecked'  src='not_spicy.png' >
+                              <img class='img-hover'  	src='not_spicy.png' >
+                              <img class='img-checked'    src='spicy.png' >
+                          </label>";
+                            }
+                            else{
+                                echo "<label class='container-checkbox'>
+                                <input type='checkbox' id='spicy-checked' name='spicy-$i'>
+                                <img class='img-unchecked'  src='not_spicy.png' >
+                              <img class='img-hover'  	src='not_spicy.png' >
+                              <img class='img-checked'    src='spicy.png' >
+                          </label>";
+                            }
+                        }
+                    ?>
+                </div>
+            
+                <div class="sb-button-container">
+                    <input type="submit" name="filter_refresh" value="Frissítés" class="sb-button">
+                    <input type="submit" name="filter_reset" value="Visszaállítás" class="sb-button">
+                </div>
+            </form>
+        </div>
+    </div>
 
-        //brands
-        $sql_get_bradns = "SELECT * FROM brand;";
-        $result = mysqli_query($conn, $sql_get_bradns);
-
-        while($row = mysqli_fetch_assoc($result)){
-            if(in_array($row["brand_id"], $_SESSION["filter_parameters"]["brands"])){
-                echo "<input type='checkbox' name='brand-" . $row["brand_id"] . "' checked>" . $row["brand_name"] . "<br>";
-            }
-            else{
-                echo "<input type='checkbox' name='brand-" . $row["brand_id"] . "'>" . $row["brand_name"] . "<br>";
-            }
-        }
-        
-        //erősség
-        echo "Erősség: ";
-        for($i=1; $i <= 5; $i++){
-            if(in_array($i, $_SESSION["filter_parameters"]["spicy"])){
-                echo "<input type='checkbox' id='spicy-checked' name='spicy-$i' checked>$i";
-            }
-            else{
-                echo "<input type='checkbox' id='spicy' name='spicy-$i'>$i";
-            }
-        }
-    ?>
-        
-    <input type="submit" name="filter_refresh" value="frissítés">
-    <input type="submit" name="filter_reset" value="visszaállítás">
-</form>
-
+<div class="col-lg-9 products-area">
 <?php
     //szűrő feltételek kiszedése ------------------------------------------------------------------------------------
 
@@ -173,7 +194,7 @@
     //termékek kiírása
     if(mysqli_num_rows($result) > 0){
         
-        echo "<form  action='webshop.php' method='post'>";
+        echo "<form  action='webshop.php' method='post'><div id='cards-container'>";
         while($row = mysqli_fetch_assoc($result)){
             if(in_array($row["brand_id"], $_SESSION["filter_parameters"]["brands"]) && in_array($row["spiciness"], $_SESSION["filter_parameters"]["spicy"])){
 
@@ -181,46 +202,52 @@
                 $product_description = $row["product_description"];
                 
                 //alap kiírások ---------------------------------------------------------------------------
-                
-                echo "<button type='submit' name='button-$product_id'>";
-                    //név
-                    echo $row["product_name"] . "<br>";
-                    
+
+                //div kezdő
+                if(isset($row["sale"]) && $row["sale"] > 0){
+                    echo "<div class='product-card sale' data-label='" . $row["sale"]*100 .   "% leárazás'>";
+                }
+                else{
+                    echo "<div class='product-card'>";
+                }
                     //kép
                     $sql_get_image = "SELECT * FROM product_image WHERE product_id = $product_id ORDER BY image_id LIMIT 1;";
                     $image = mysqli_fetch_assoc(mysqli_query($conn, $sql_get_image))["image_data"];
 
-                    echo "<img src='$image' style='width: 300px;'> <br>";
+                    
+
+                    echo "<img src='$image' class='pc-img'> <br>";
+
+                    echo "<div class='pc-bot-container'>";
+
+                    //név
+                    echo "<p class='pc-title'>" . $row["product_name"] . "</p>";
+
+                    //erősség
+                    echo "<div class='pc-spiciniess'>";
+                    for($i=1; $i <= $row["spiciness"]; $i++){
+                        echo "<img src='spicy.png' alt='erős' class='pc-spiciness-icon'>";
+                    }
+                    for($i=1; $i <= 5 - $row["spiciness"]; $i++){
+                        echo "<img src='not_spicy.png' alt='nem erős' class='pc-spiciness-icon'>";
+                    }
+                    echo "</div>";
 
                     //ár
                     if(isset($row["sale"]) && $row["sale"] > 0){
-                        echo " " . $row["sale"]*100 .   "% leárazás: ";
-                        echo "<s>" . $row["price"] . " Ft/db</s>";
-                        echo " helyett: <br>" . $row["price"] - ($row["price"] * $row["sale"]) . " Ft/db <br>";
+                        echo "<p class='pc-price'>";
+                        echo "<s>" . $row["price"] . " Ft</s> ";
+                        echo $row["price"] - ($row["price"] * $row["sale"]) . " Ft </p>";
                     }
                     else{
-                        echo $row["price"] . " Ft/db <br>";
+                        echo "<p class='pc-price'>";
+                        echo $row["price"] . " Ft</p>";
                     }
                     
-                    //erősség
-                    echo " Erőssége: ";
-                    for($i=1; $i <= $row["spiciness"]; $i++){
-                        echo "<img src='spicy.png' alt='erős' style='width: 30px'>";
-                    }
-                    for($i=1; $i <= 5 - $row["spiciness"]; $i++){
-                        echo "<img src='not_spicy.png' alt='nem erős' style='width: 30px'>";
-                    }
 
-                    //raktáron
-                    if($row["in_stock"] > 0){
-                        echo "Raktáron " . $row["in_stock"] . "db";
-                        //!!!
-                    }
-                    else{
-                        echo "Nincs raktáron!";
-                        //!!!
-                    }
-                echo "</button><br>";
+                    echo "<button type='submit' name='button-$product_id' class='pc-button'>Tovább</button>";
+                    echo "</div>";
+                echo "</div>";
 
                 
                 
@@ -289,8 +316,9 @@
     //     echo '<input type="submit" name="logout" value="logout">';
     // }
 ?>
-    
-    
+</div>
+</div>
+</div>
 </form>
 </body>
 </html>
