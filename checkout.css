@@ -1,0 +1,71 @@
+body{
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y:scroll;
+	font-family: "Archivo", sans-serif;
+}
+
+.headbar{
+    background-color: whitesmoke;
+    position: sticky;
+}
+
+.logo{
+    width: 70px;
+    margin-left: 45%;
+}
+
+.logout{
+    width: 40px;
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+#order{
+	  display: block;
+	margin-right: auto;
+	margin-left: auto;
+	justify-content: center;
+    border: none;
+    outline: 0;
+    background-color: #FC891C;
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+	height: 50px;
+}
+
+#torles{
+    background-color: darkred;
+    color: white;
+    width: 20%;
+    float: right;
+    margin-right: 2%;
+	margin-top: -250px;
+}
+
+#torles:hover{
+    background-color: #fc200c;
+    transition: 1s ease;
+}
+
+
+input[type=submit]{
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input[type=submit]:hover{
+    background-color: #4e3939;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.margin-left{
+	margin-left: 2%;
+}

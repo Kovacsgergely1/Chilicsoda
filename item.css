@@ -1,0 +1,58 @@
+body{
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y:scroll;
+}
+.headbar{
+    background-color: whitesmoke;
+    position: sticky;
+}
+
+.logo{
+    width: 70px;
+    margin-left: 45%;
+}
+
+input[type=submit]{
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	background-color: #EDEDED;
+}
+
+.cart{
+    width: 40px;
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+
+img{
+    width: auto;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.column{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px
+}
+
+.col2{
+	text-align: center;
+	justify-content: auto;
+	margin: auto;
+}
+
+#kosar{
+	background-color:#F11914;
+}
+
+#kosar:hover{
+	background-color:#FC1F0C;
+}
