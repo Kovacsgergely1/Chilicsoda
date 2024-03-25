@@ -24,9 +24,9 @@ body{
 }
 
 .logo{
-    width: 70px;
     margin-left: 45%;
-}
+    width: 70px;
+  }
 
 .welcome{
     text-align: center;

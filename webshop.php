@@ -122,7 +122,7 @@
         ?>
         <?php
             if(isset($_SESSION["username"])){
-                echo '<input type="submit" name="logout" value="logout" class="logout">';
+                echo '<form action="logout.php" method="post"><input type="submit" name="logout" value="logout" class="logout"></form>';
         }
         ?>
     </div>
@@ -130,7 +130,7 @@
 
     <div class="headbar">
         <span style="font-size:40px;cursor:pointer;padding-left:10px;" onclick="openNav()">&#9776;</span>
-        <a href="" diabled><img class="logo" src="./chilixd.png" alt="Logo_helye"></a>
+        <a href="index.php"><img class="logo" src="./chilixd.png" alt="Logo_helye"></a>
         <a href="checkout.php"><img class="float-end cart" src="shopping-cart-icon.png" alt="Login"></a>
     </div>
 
@@ -138,7 +138,7 @@
     
 <!-- szűrő -->
 <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-3 red">
         <div class="sidebar">
             <form action="webshop.php" method="post">
                 <div class="sb-option-container">

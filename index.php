@@ -61,7 +61,7 @@
         ?>
         <?php
             if(isset($_SESSION["username"])){
-                echo '<input type="submit" name="logout" value="logout" class="logout">';
+                echo '<form action="logout.php" method="post"><input type="submit" name="logout" value="logout" class="logout"></form>';
         }
         ?>
     </div>
@@ -69,7 +69,7 @@
 
     <div class="headbar">
         <span style="font-size:40px;cursor:pointer;padding-left:10px;" onclick="openNav()">&#9776;</span>
-        <a href="" diabled><img class="logo" src="./chilixd.png" alt="Logo_helye"></a>
+        <a  disabled><img class="logo" src="./chilixd.png" alt="Logo_helye"></a>
         <a href="./login.php"><img class="float-end login" src="./Login.png" alt="Login"></a>
     </div>
     
@@ -116,7 +116,7 @@
     <footer class="footer">
         <div class="col-sm-6 float-start">
             <a href="#"><img src="./fb-ico.png" alt="Facebook" class="ico"></a>
-            <a href="#"><img src="./inst-ico.png" alt="Instagram" class="ico"></a>
+            <a href="https://www.instagram.com/chilicsoda/" target="_blank"><img src="./inst-ico.png" alt="Instagram" class="ico"></a>
             <a href="#"><img src="./yt-ico.png" alt="Youtube" class="ico"></a>
         </div>
         <div class="col-sm-6 float-start">
