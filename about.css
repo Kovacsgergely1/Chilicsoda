@@ -10,8 +10,8 @@ body{
 }
 
 .logo{
-    width: 70px;
-    margin-left: 45%;
+  margin-left: 45%;
+  width: 70px;
 }
 
 .login{
@@ -47,6 +47,13 @@ html {
     color: #EDEDED;
   }
   
+iframe{
+  border-color: #FF7700;
+  border-width: 2px;
+  border-radius: 5px;
+  border-style: solid;
+  box-shadow: 1px 1px 0 0 #FF7700;
+}
   .container {
     padding: 0 16px;
   }

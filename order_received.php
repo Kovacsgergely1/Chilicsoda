@@ -50,6 +50,18 @@ a{
 	text-decoration:none;
 	color: black;
 }
+.webshop{
+    border: none;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    font-size: 20pt;
+    background: none;
+}
+.webshop:hover{
+    background-color: rgba(245, 245, 245, 0.295);
+    transition: 0.3s ease;
+}
     </style>
     <link rel="stylesheet" href="./sidenav.css">
     <script src="./sidenav.js"></script>
@@ -72,9 +84,9 @@ a{
 				echo "<h5 class='username'>Üdvözlünk {$_SESSION['username']}!</h5>";
 			}
         ?>
-        <?php
+       <?php
             if(isset($_SESSION["username"])){
-                echo '<input type="submit" name="logout" value="logout" class="logout">';
+                echo '<form action="logout.php" method="post"><input type="submit" name="logout" value="logout" class="logout"></form>';
         }
         ?>
     </div>
@@ -90,6 +102,8 @@ a{
     <div class="kozep">
         <h2>A rendelésed sikeresen elküldtük!</h2>
         <p>A szállítás sikerességéről a <a href="https://github.com/Project-PackX/" target="_blank">PackX</a> gondoskodik.</p>
+
+        <button class="webshop"><a href="webshop.php">Vásárolj tovább!</a></button>
     </div>
 </body>
 </html>

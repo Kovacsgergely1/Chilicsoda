@@ -66,9 +66,9 @@
 				echo "<h5 class='username'>Üdvözlünk {$_SESSION['username']}!</h5>";
 			}
         ?>
-        <?php
+      <?php
             if(isset($_SESSION["username"])){
-                echo '<input type="submit" name="logout" value="logout" class="logout">';
+                echo '<form action="logout.php" method="post"><input type="submit" name="logout" value="logout" class="logout"></form>';
         }
         ?>
     </div>
@@ -76,7 +76,7 @@
 
     <div class="headbar">
         <span style="font-size:40px;cursor:pointer;padding-left:10px;" onclick="openNav()">&#9776;</span>
-        <a href="" diabled><img class="logo" src="./chilixd.png" alt="Logo_helye"></a>
+        <a href="index.php"><img class="logo" src="./chilixd.png" alt="Logo_helye"></a>
         <img class="float-end login" src="./Login.png" alt="Logout">
     </div>
 

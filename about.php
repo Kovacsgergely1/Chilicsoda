@@ -46,9 +46,9 @@
 				echo "<h5 class='username'>Üdvözlünk {$_SESSION['username']}!</h5>";
 			}
         ?>
-        <?php
+    <?php
             if(isset($_SESSION["username"])){
-                echo '<input type="submit" name="logout" value="logout" class="logout">';
+                echo '<form action="logout.php" method="post"><input type="submit" name="logout" value="logout" class="logout"></form>';
         }
         ?>
     </div>
@@ -64,7 +64,8 @@
         <h1>A Csodáról</h1>
         <p>Ha kíváncsi a történetünkre nézze meg a videót!</p>
 
-        <iframe width="600" height="338" src="https://www.youtube.com/embed/rVkScnER848" allowfullscreen></iframe>      </div>
+        <iframe width="600" height="338" src="https://www.youtube.com/embed/rVkScnER848" allowfullscreen></iframe>      
+        </div>
       
       <h2 style="text-align:center">Csapatunk</h2>
       <div class="row">
@@ -149,7 +150,7 @@
       <footer class="footer">
         <div class="col-sm-6 float-start">
             <a href="#"><img src="./fb-ico.png" alt="Facebook" class="ico"></a>
-            <a href="#"><img src="./inst-ico.png" alt="Instagram" class="ico"></a>
+            <a href="https://www.instagram.com/chilicsoda/" target="_blank"><img src="./inst-ico.png" alt="Instagram" class="ico"></a>
             <a href="#"><img src="./yt-ico.png" alt="Youtube" class="ico"></a>
         </div>
         <div class="col-sm-6 float-start">

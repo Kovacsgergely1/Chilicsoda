@@ -110,7 +110,7 @@
         ?>
         <?php
             if(isset($_SESSION["username"])){
-                echo '<input type="submit" name="logout" value="logout" class="logout">';
+                echo '<form action="logout.php" method="post"><input type="submit" name="logout" value="logout" class="logout"></form>';
         }
         ?>
     </div>
@@ -139,8 +139,8 @@
             //brand name
             $sql_get_brand_name = "SELECT * FROM brand WHERE brand_id =" . $row["brand_id"];
             $brand_name = mysqli_fetch_assoc(mysqli_query($conn, $sql_get_brand_name))["brand_name"];
-            echo $brand_name . ": ";
-            echo $product_name . "<br>";
+            echo "<h1 class='brand-name'>"$brand_name . ":</h1>";
+            echo "<h1 class='product-name'>"$product_name . "</h1>";
 
 
 
@@ -158,7 +158,7 @@
             
             
 
-            echo "<div class='column col2'>$product_description . <br>";
+            echo "<div class='column col2'><div class='prod-desc'> $product_description . </div>";
 
             // akció/ár
             if(isset($row["sale"]) && $row["sale"] > 0){
@@ -171,12 +171,12 @@
             }
 
             //erősség
-            echo " Erőssége: ";
+            echo "<br> Erőssége: ";
             for($i=1; $i <= $row["spiciness"]; $i++){
                 echo "<img src='spicy.png' alt='erős' style='width: 30px'>";
             }
             for($i=1; $i <= 5 - $row["spiciness"]; $i++){
-                echo "<img src='not_spicy.png' alt='nem erős' style='width: 30px'>";
+                echo "<img src='not_spicy.png' alt='nem erős' style='width: 30px'><br>";
             }
 
             

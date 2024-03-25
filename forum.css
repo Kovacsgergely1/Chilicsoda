@@ -10,9 +10,9 @@ body{
 }
 
 .logo{
-    width: 70px;
     margin-left: 45%;
-}
+    width: 70px;
+  }
 
 .login{
     width: 40px;
@@ -21,8 +21,20 @@ body{
 }
 
 table{
-    width: 100%;
+    width: 75%;
     margin: auto;
+}
+
+.column{
+    float: left;
+    width: 90%;
+    padding: 10px;
+}
+
+.advertisement{
+    float: left;
+    width: 10%;
+    padding: 10px;
 }
 
 th{
@@ -36,13 +48,13 @@ td{
     border: none;
     text-align: center;
     background-color:rgb(231, 230, 230);
+    border-bottom: 1px solid black;
 }
 
 #torles{
     background-color: darkred;
     color: white;
-    width: 20%;
-    float: right;
+    width: auto;
     margin-right: 2%;
 }
 
@@ -88,12 +100,11 @@ button{
 
 
 #return{
-    background-color: #FFB70C;
-    background-color: whitesmoke;
     border: none;
     border-radius: 5px;
+    height: auto;
     width: auto;
-    height: 30px;
+    background: none;
     margin-top: 10px;
     margin-bottom: 10px;
 	text-decoration: none;

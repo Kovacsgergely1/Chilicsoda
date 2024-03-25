@@ -11,9 +11,9 @@ body{
 }
 
 .logo{
-    width: 70px;
     margin-left: 45%;
-}
+    width: 70px;
+  }
 
 .logout{
     width: 40px;

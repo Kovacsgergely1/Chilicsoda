@@ -9,9 +9,9 @@ body{
 }
 
 .logo{
-    width: 70px;
     margin-left: 45%;
-}
+    width: 70px;
+  }
 
 input[type=submit]{
     color: white;
@@ -55,4 +55,20 @@ img{
 
 #kosar:hover{
 	background-color:#FC1F0C;
+}
+
+.product-name{
+    font-weight: bold;
+}
+
+.brand-name{
+    font-weight: bold;
+}
+
+.prod-desc{
+    margin: auto;
+    text-align: center;
+    border: 1px solid #FC1F0C;
+    border-radius: 5px;
+    box-shadow: #FC1F0C;
 }
